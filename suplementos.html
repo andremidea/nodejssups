@@ -1,0 +1,47 @@
+<head>
+  <title>BuscaSup</title>
+</head>
+<body>
+<div class="hero-unit">
+  <h1>Busque seu próximo Suplemento...</h1>
+</br>
+  <p>
+  	{{> busca}}  
+  </p>
+</div>
+<div class="span2"></div>
+<div class="span8" align="center">
+  <table  class="table table-hover">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Preço</th>
+      <tr>
+    </thead>
+    <tbody>  
+      {{> suplementos}}
+    </tbody>
+  </table>
+  
+</div>
+<div class="span2"></div>
+  
+</body>
+
+<template name="suplementos">
+	{{#each suplementos}}
+		{{> suplemento}}
+	{{/each}}
+</template>
+
+<template name="suplemento">
+  <tr>
+    <td><strong><a href="{{link}}" target="_blank">{{descricao}}</a></strong>
+    <td>{{preco}}</td>
+  </tr>
+</template>
+
+<template name="busca">
+  <input type="text" id="inputBusca" class="input-xxlarge search-query">
+  <button type="button"  class="btn-large btn-primary">Buscar</button>
+</template>
